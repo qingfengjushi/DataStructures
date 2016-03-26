@@ -1,18 +1,19 @@
 package com.sort;
 
-public class MergeSort implements Sort {
+public class MergeSort extends StatisticsSort {
 	private int[] sortDatas;
 	private int[] workspace;
 	
 	public MergeSort(int[] sortDatas) {
-		this.sortDatas = sortDatas;
+		this.sortDatas = sortDatas.clone();
 		workspace = new int[sortDatas.length];
 	}
 	
 	@Override
-	public void sort() {
+	public int[] sort() {
 		// TODO Auto-generated method stub
 		doSort(0, sortDatas.length - 1);
+		return sortDatas;
 	}
 	
 	private void doSort(int lower, int higher) {

@@ -1,14 +1,14 @@
 package com.sort;
 
-public class InsertSort implements Sort {
+public class InsertSort extends StatisticsSort {
 	private int[] sortDatas;
 	
 	public InsertSort(int[] sortDatas) {
-		this.sortDatas = sortDatas;
+		this.sortDatas = sortDatas.clone();
 	}
 	
 	@Override
-	public void sort() {
+	public int[] sort() {
 		// TODO Auto-generated method stub
 		int out;
 		int in = 0;
@@ -22,5 +22,6 @@ public class InsertSort implements Sort {
 			}
 			sortDatas[in] = temp;
 		}
+		return sortDatas;
 	}
 }
